@@ -23,6 +23,9 @@ The Technologies that is used for make up of this projects are :
 * JAVASCRIPT - Used to run the scripts
 * Jquery - Duh
 
+
+
+
 ### Development
 
 Want to contribute? Great!
@@ -32,9 +35,9 @@ Send your contribution to itsmemz52@gmail.com
 
 
 License
-f9.org
+---------
 
-Pilabs-SummerofCode
+MIT
 
 
 **Free Software, Hell Yeah!**
