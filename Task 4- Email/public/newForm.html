@@ -1,0 +1,33 @@
+<!Doctype html>
+	<head>
+		<title>Create New User</title>
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<body>
+	
+
+		
+		<div class="jumbotron" style="margin-right:250px; margin-left:250px;border-style: solid;background-color:#1c2129"> <h1 style="text-align:center; color: #008080;margin-bottom:20px">Create New User </h1>
+			</div>
+		<div >
+			<form style="margin-left:250px" role="form" action="/create" method="post">
+				 <label for="username"  style="color:#008080;margin-left:250px">User Name:</label>
+				<input type="text" class="form-control" id="UserNameTxt" name="username" style="width:180px; align:center ;margin-left:250px" placeHolder="Enter Username...">
+				 <label for="password"  style="color:#008080;margin-left:250px">Password:</label>
+				<input type="password" class="form-control" name="password" id="PasswordTxt" style="width:180px;margin-left:250px" placeHolder="Enter password ..">
+									 <label for="email"  style="color:#008080;margin-left:250px">Email:</label>
+				<div class="input-group" >
+  							<input type="text" class="form-control" placeholder="Enter Email.." name="email" aria-describedby="basic-addon2" id="email" style="margin-left:250px;width:180px">
+  							<p style="margin-left:500px"><span class="input-group-addon" id="basic-addon2" >@umail.com</span></p>
+				</div>
+				  <button type="submit" class="btn btn-success" id="btnNewUser"  style="margin-left:250px"><span class="glyphicon glyphicon-user"></span> <b>Submit</b></button>
+			</form>
+		
+		</div>
+			<script type="text/javascript" src="js/Modal.js"></script>
+        <script type="text/javascript" src="js/Controller.js"></script>
+            <script type="text/javascript" src="js/View.js"></script>
+             <script type="text/javascript" src="js/index.js"></script>
+	</body>
+</html>

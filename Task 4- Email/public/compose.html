@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>U Mail</title>
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	   
+      <script src="js/jquery-1.11.3.min.js"></script>
+      <style type="text/css">
+.reply {
+    display:none; /* hide for JS enabled browsers */
+}
+.reply {
+    /* form styles here */
+}
+</style>
+		
+	</head>
+	<body>
+	<div class="container">
+        
+                <div class="jumbotron" ><h1>U Mail </h1>
+                      <ul style="float:right;text-align:right" class="nav navbar-nav">
+                         <li class="me"></li>
+       <li ><a href="/logout">  <button type="button" class="btn btn-danger"> <span class="glyphicon glyphicon-remove">Logout</span></button></a></li>
+      </ul></div>
+    <div class="row">
+        <div class="col-sm-3 col-md-2">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Mail <span class="caret"></span>
+                </button>
+
+            </div>
+        </div>
+        <div class="col-sm-9 col-md-10">
+            <!-- Split button -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">
+                    <div class="checkbox" style="margin: 0;">
+                        <label>
+                            <input type="checkbox">
+                        </label>
+                    </div>
+                </button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
+                </button>
+            </div>
+            <button type="button" class="btn btn-default" data-toggle="tooltip" title="Refresh">
+                &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;&nbsp;</button>
+            <!-- Single button -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    More <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Mark all as read</a></li>
+                    <li class="divider"></li>
+                    <li class="text-center"><small class="text-muted">Select messages to see more actions</small></li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <div class="btn-group btn-group-sm">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-3 col-md-2">
+            <button class="btn btn-danger btn-sm btn-block" id="btncompose" role="button"><i class="glyphicon glyphicon-edit"></i> Compose</button>
+            <!-- /.modal compose message -->
+    <div class="modal show" id="modalCompose">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="inbox.html"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></a>
+            <h4 class="modal-title">Compose Message</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form" class="form-horizontal" action="/email" method="post" id="email">
+                 <a href="inbox.html"> <button type="submit" class="btn btn-primary" id="btnSend">Send <i class="fa fa-arrow-circle-right fa-lg"></i></button></a>
+                <div class="form-group">
+                  <label class="col-sm-2" for="inputTo">To</label>
+                  <div class="col-sm-10"><input type="email" name="to" class="form-control" id="inputTo" placeholder="Enter Recipent...."></div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2" for="inputSubject">Subject</label>
+                  <div class="col-sm-10"><input type="text" class="form-control" id="inputSubject" name="subject" placeholder="subject..."></div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-12" for="inputBody">Message</label>
+                  <div class="col-sm-12"><textarea class="form-control" id="inputBody" name="message" rows="18"></textarea></div>
+                </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <a href="inbox.html"><button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button> </a>
+            
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal compose message -->
+            <hr>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#"><span class="badge pull-right"></span> Inbox </a>
+                </li>
+                <li><a href="#">Sent Mail</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-md-10">
+            <!-- Nav tabs -->
+            <!-- Tab panes -->
+            
+            
+            <div class="row-md-12">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/model.js"></script>
+<script type="text/javascript" src="js/control.js"></script>
+<script type="text/javascript" src="js/view1.js"></script>
+<script type="text/javascript" src="js/model2.js"></script>
+<script type="text/javascript" src="js/controller2.js"></script>
+<script type="text/javascript" src="js/view2.js"></script>
+
+	</body>
+</html>
