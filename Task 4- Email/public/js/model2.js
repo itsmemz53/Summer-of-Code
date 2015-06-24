@@ -1,7 +1,9 @@
 
 var ids=[];
 
-
+var ClassForModel2=function(){
+	
+}
 var oldid=0;
 function loader()
 {

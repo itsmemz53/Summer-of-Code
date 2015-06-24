@@ -1,4 +1,6 @@
-
+var ClassForReply=function(){
+	
+}
 $("#reply").click(function(){
 
 	var abc=$(this).siblings(".from").val();

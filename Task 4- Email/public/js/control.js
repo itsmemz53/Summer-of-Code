@@ -1,9 +1,10 @@
+var ClassForInbox=function(){
 
-function update()
-{
-	this.gotData=function(sending)
+};
+
+	ClassForInbox.prototype.gotData=function(sending)
 	{
 		ui.goGogo(sending);
 	}
-}
-var up=new update();
+
+var up=new ClassForInbox();

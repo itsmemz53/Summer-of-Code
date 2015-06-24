@@ -3,6 +3,9 @@ var ids=[];
 
 
 var oldid=0;
+var ClassForModel=function(){
+
+};
 function loader()
 {
 	

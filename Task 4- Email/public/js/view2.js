@@ -1,7 +1,9 @@
- function updateUi()
-{
+var UpdateSentView=function(){
+
+}
+ 
 	
-	this.goGogo=function(data)
+	UpdateSentView.prototype.goGogo=function(data)
 	{
 	
 		 var from=$('<div><p class="bg-info">' + ' '+data.from +'</p></div>');
@@ -14,8 +16,8 @@
 		 				$("#home").append(temp);
 }
 
-}
-var ui=new updateUi();
+
+var ui=new UpdateSentView();
 $('#btnSend').click(function(){
 
 updateUi();

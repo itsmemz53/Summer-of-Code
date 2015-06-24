@@ -1,7 +1,8 @@
- function updateUi()
-{
-	
-	this.goGogo=function(data)
+var UpdateInboxView=function(){
+
+}
+ 
+	UpdateInboxView.prototype.goGogo=function(data)
 	{
 		var ab=data.from;
 		$('.me').append(ab);
@@ -21,8 +22,7 @@
 
 }
 
-}
-var ui=new updateUi();
+var ui=new UpdateInboxView();
 $('#btnSend').click(function(){
 
 updateUi();

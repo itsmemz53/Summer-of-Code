@@ -1,13 +1,10 @@
+var ClassForSent=function(){
 
-console.log("abc");
+};
 
-
-
-function update()
-{
-	this.gotData=function(sending)
+	ClassForSent.prototype.gotData=function(sending)
 	{
 		ui.goGogo(sending);
 	}
-}
-var up=new update();
+
+var up=new ClassForSent();
