@@ -1,0 +1,316 @@
+<!Doctype html>
+<head>
+	<title>Music App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+           <script src="js/bootstrap.min.js"></script>
+           <link rel="stylesheet" type="text/css" href="css/custom.css">
+<link rel="stylesheet" type="text/css" href="css/mobile.css">
+<link rel="stylesheet" type="text/css" href="rangeslider/rangeslider.css">
+
+</head>
+<body>
+	<nav class="navbar navbar- " style="background-color:skyblue">
+  <div class="container-fluid col-md-12 col-xs-12 col-lg-12 col-sm-12">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="glyphicon glyphicon-th-list" style="font-size:25px"></span>
+
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/Play-Music-logo.png" width="50px" height="50px">Music</a>
+            
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav hidden-xs hidden-sm">
+        <li ><a href="#"><img src="img/home.png" width="30px" height="30px"> <span class="sr-only">(current)</span></a></li>
+      </ul>
+      <div class=" col-md-offset-4">
+
+      <form class="navbar-form navbar-left" role="search">
+       <div class="form-group has-feedback col-xs-offset-center" >
+            <input type="search" placeHolder="Search.." class="form-control" style="border-radius: 25px;"></input>
+        <i class="glyphicon glyphicon-search form-control-feedback" ></i>
+
+              </div>
+      </form>
+    </div>
+    <div class=" col-md-offset-10">
+      <ul class="nav navbar-nav ">
+        <li><a href="#"><img src="img/bell.png" width="25px" height="25px"> <span class="badge">5</span></a></li>
+        <li >
+            <a href="#bell"><img src="img/settings.png" width="25px" height="25px" ></a>
+        </li>
+        
+      </ul>
+    
+    </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="col-xs-2 hidden-md hidden-lg" style="float:right" onclick=hello()>
+        <span class="glyphicon glyphicon-headphones" style="font-size:30px;color:darkblue;">
+        </span>
+    </div>
+    <div class="col-xs-2 hidden-md hidden-lg"onclick=func2() style="float:left"><span class="glyphicon glyphicon-align-justify" style="font-size:30px;color:darkblue;"></span></div>
+<div class="col-xs-12 showToggle" style="display:none">
+     
+    <h4><strong>Main</strong></h4>
+    <ul class="nav nav-stacked">
+        <li align="center">
+          <a href="javascript:;"> Currently Playing </a></li>
+          <a href="images/music.jpg" class="thumbnail">
+              <img src="images/music.jpg"  alt="music album">
+          </a>
+        <li align="center"><a href="javascript:;"></i> Song Title</a></li>
+          <h4 align="center">Show me the Meaning</h4>
+        <li align="center"><a href="javascript:;"></i> Song Author </a></li>
+          <h4 align="center">BSB</h4> 
+      </ul>
+    </br>
+    </br>
+        </br>
+    </br>
+</div>
+<div class="container-fluid afterHide" style="background-color:black;">
+<div class="row">
+  <div class="col-xs-2 hidden-xs hidden-sm" sty;e="float:right;">
+      <!-- left -->
+      <h4><strong>Main</strong></h4>
+      <ul class="nav nav-stacked">
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-list-alt"></i>New Songs</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-inbox"></i> Inbox</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-user"></i> People</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-phone"></i> Devices</a></li>
+      </ul>
+      <h4><strong>Collection</strong></h4>
+      <ul class="nav nav-stacked">
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-list"></i> Library </a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-heart"></i> Favourites </a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-repeat"></i> History </a></li>
+
+      </ul>
+      <h4><strong>Playlists</strong></h4>
+      <ul class="nav nav-stacked">
+      <li><a href="javascript:;"><i class="glyphicon glyphicon-music"></i> Music Lounge</a></li>
+      </ul>
+      </div>
+
+     
+        
+
+        <div class="col-xs-6 col-sm-6 hidden-lg hidden-md showMenu" style="display:none">
+      <!-- left -->
+        <h4><strong>Main</strong></h4>
+      <ul class="nav nav-stacked">
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-list-alt"></i>New Songs</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-inbox"></i> Inbox</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-user"></i> People</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-phone"></i> Devices</a></li>
+      </ul>
+      <h4><strong>Collection</strong></h4>
+      <ul class="nav nav-stacked">
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-list"></i> Library </a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-heart"></i> Favourites </a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-repeat"></i> History </a></li>
+
+      </ul>
+      <h4><strong>Playlists</strong></h4>
+      <ul class="nav nav-stacked">
+      <li><a href="javascript:;"><i class="glyphicon glyphicon-music"></i> Music Lounge</a></li>
+      </ul>
+      </div>
+
+
+
+<div class="col-xs-8 col-sm-8 hidden-xs hidden-sm hideAfter" style="background-color:lightgrey;">
+  <strong>Enjoy !</strong>
+  <p style="text-align:right">
+  <a href="javascript:;"><i class="glyphicon glyphicon-list"></i></a>
+  <a href="#"><i class="glyphicon glyphicon-th-large"></i></a>
+  <a href="#"><i class="glyphicon glyphicon-th"></i></a>
+  </p>
+<div class="row" style="background-color:lightgrey;">
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">You Leave me Breathless</p>
+</div>
+
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">Numb</p>
+</div>
+
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg"  alt="music album">
+</a>
+<p style="text-align:center">Untill You</p>
+</div>
+
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">Smack That</p>
+</div>
+
+</div>
+<div class="row" style="background-color:lightgrey;">
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">I Love The Way You Lie</p>
+</div>
+
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg"  alt="music album">
+</a>
+<p style="text-align:center">Show Me The Meaning</p>
+</div>
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">Quite Playing Games</p>
+</div>
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">Having You</p>
+</div>
+</div>
+</div>
+<div class="col-xs-12 hidden-md hidden-lg " style="background-color:lightgrey;">
+  
+  <strong>Enjoy !</strong>
+  <p style="text-align:right">
+  <a href="javascript:;"><i class="glyphicon glyphicon-list"></i></a>
+  <a href="#"><i class="glyphicon glyphicon-th-large"></i></a>
+  <a href="#"><i class="glyphicon glyphicon-th"></i></a>
+  </p>
+<div class="row" style="background-color:lightgrey;">
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">You Leave me Breathless</p>
+</div>
+
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">Numb</p>
+</div>
+
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg"  alt="music album">
+</a>
+<p style="text-align:center">Untill You</p>
+</div>
+
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">Smack That</p>
+</div>
+
+</div>
+<div class="row" style="background-color:lightgrey;">
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">I Love The Way You Lie</p>
+</div>
+
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg"  alt="music album">
+</a>
+<p style="text-align:center">Show Me The Meaning</p>
+</div>
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">Quite Playing Games</p>
+</div>
+<div   class="col-xs-6 music"  >
+<a href="images/music.jpg" class="thumbnail">
+  <img src="images/music.jpg" alt="music album">
+</a>
+<p style="text-align:center">Having You</p>
+</div>
+</div>
+</div>
+<div class="col-xs-2 hidden-xs hidden-sm">
+    <h4><strong>Main</strong></h4>
+    <ul class="nav nav-stacked">
+        <li>
+          <a href="javascript:;"> Currently Playing </a></li>
+          <a href="images/music.jpg" class="thumbnail">
+              <img src="images/music.jpg"  alt="music album">
+          </a>
+        <li><a href="javascript:;"></i> Song Title</a></li>
+          <h4>Show me the Meaning</h4>
+        <li><a href="javascript:;"></i> Song Author </a></li>
+          <h4>BSB</h4> 
+      </ul>
+</div>
+
+
+</div>
+</div>
+<footer class="footer" >
+  <div class="container-fluid col-md-offset-5 hidden-sm hidden-xs" >
+  <a href="#"><img src="images/back.png" class="butts img-thumbnail"></a>
+  <a href="#"><img src="images/play.png" class="butts img-thumbnail"></a>
+  <a href="#"><img src="images/forward.png" class="butts img-thumbnail"></a>
+  
+</div>
+ <div class="container-fluid col-xs-offset-3 col-sm-offset-3 col-sm-12 col-xs-12  hidden-md hidden-lg" >
+  <a href="#"><img src="images/back.png" class="butts img-thumbnail"></a>
+  <a href="#"><img src="images/play.png" class="butts img-thumbnail"></a>
+  <a href="#"><img src="images/forward.png" class="butts img-thumbnail"></a>
+  
+</div>
+<input type="range" >
+
+</footer>
+<script type="text/javascript" href="js/jquery.min.js"></script>
+<script type="text/javascript" href="js/modal.js"></script>
+<script type="text/javascript">
+function hello(){
+  console.log("hello") 
+$(".showToggle").slideToggle();
+}
+function func2(){
+  console.log("hello") 
+$(".showMenu").slideToggle();
+}
+</script>
+<script type="text/javascript" href="bootstrap/js/bootstrap.all.js"></script>
+<script type="text/javascript" href="rangeslider/rangeslider.js"></script>
+<script type="text/javascript" href="rangeslider/rangeslider.min.js"></script>
+   
+</body>
+</html>
