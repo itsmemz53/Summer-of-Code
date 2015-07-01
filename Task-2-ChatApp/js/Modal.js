@@ -3,10 +3,6 @@ var Modal=function(){
 };
 Modal.prototype.SendAjax=function(a,b,c){
 	$.ajax({
-	    url: 'http://localhost:3030/'+ new Date().getTime(), 
-	    type: 'POST', 
-	    contentType: 'application/json', 
-	    data: JSON.stringify({timestamp:a,nick:b,msg:c}),
 	success:function(res){console.log(res);}
 	});
 }
