@@ -1,27 +1,51 @@
-angular.module('BlogApp.services', []).
+
+angular.module('myApp.services', []).
   factory('ergastAPIservice', function($http) {
 
     var ergastAPI = {};
 
-    ergastAPI.LoginForm = function(abc) {
+       ergastAPI.registerUser=function(data)
+    {
+          var req = {
+ method: 'POST',
+ url: '/signup',
+ data: data
+};
+$http(req);
 
-      var req={
-        method: 'POST', 
-        url: '/login',
-        data : abc
-     
-    };
-    $http(req);
     }
-    ergastAPI.RegisterForm = function(abc) {
+    ergastAPI.login=function(abc)
+    {
+              var req = {
+ method: 'POST',
+ url: '/login',
+ data: abc
+};
+return $http(req); 
+    }
+    ergastAPI.getBlog = function(id) {
+      console.log("yeh id hai!",id);
+      return $http({
+        method: 'GET', 
+        url: '/blogs/'+id
+      });
+    }
+    ergastAPI.savePost=function(abc)
+    {
+      var req={
+        method:'POST',
+        url:'/newBlog',
+        data:abc
+      };
+      return $http(req);
+    }
+   
+     ergastAPI.getBlogs = function() {
+      return $http({
+        method: 'GET', 
+        url: '/blogs'
+      });
+    }
 
-      var req={
-        method: 'POST', 
-        url: '/create',
-        data : abc
-     
-    };
-    $http(req);
-    }
     return ergastAPI;
   });

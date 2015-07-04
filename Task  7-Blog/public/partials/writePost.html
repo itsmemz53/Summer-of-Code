@@ -1,0 +1,33 @@
+<div class="form-group">
+<form ng-app="myApp" ng-submit="savePost()" ng-controller="postingController" name="myForm">
+<p>Blog title:<br>
+  <input class="form-control" type="text" name="ptitle" ng-model="ptitle" required>
+  <span style="color:red" ng-show="myForm.ptitle.$dirty && myForm.ptitle.$invalid">
+  <span ng-show="myForm.ptitle.$error.required">Title is required.</span>
+  </span>
+</p>
+
+<p>Blog Subtitle:<br>
+  <input class="form-control" type="text" name="subtitle" ng-model="subtitle" required>
+  <span style="color:red" ng-show="myForm.subtitle.$dirty && myForm.subtitle.$invalid">
+  <span ng-show="myForm.subtitle.$error.required">Subtitle is required.</span>
+  </span>
+</p>
+
+
+<p>Enter pseudonym or Complete name:<br>
+  <input class="form-control" type="text" name="author" ng-model="author" required>
+  <span style="color:red" ng-show="myForm.author.$dirty && myForm.author.$invalid">
+  <span ng-show="myForm.author.$error.required">Author name/Pseudonym is required.</span>
+  </span>
+</p>
+
+<p>Post:<br>
+<textarea form="myForm" class="form-control" rows="8" name="post" ng-model="post"></textarea>
+<span style="color:red" ng-show="myForm.post.$dirty && myForm.post.$invalid">
+<span ng-show="myForm.post.$error.required">Post is required.</span>
+</p>
+<p>
+  <input type="submit" value="Save" class="btn" 
+  ng-disabled="myForm.title.$invalid || myForm.post.$invalid || myForm.subtitle.$invalid">
+</p>

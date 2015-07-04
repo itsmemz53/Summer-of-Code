@@ -2,13 +2,7 @@ var express = require('express')
   , passport = require('passport')
   , util = require('util')
   , LocalStrategy = require('passport-local').Strategy;
-
-var port = process.env.PORT || 3030;
-
-var dburl = "localhost:27017/blogdb";
-
-if (process.env.PORT)
-  dburl = "itsmemz52:K13mohammad@ds053380.mongolab.com:53380/blogdb";
+  var index=1;
 
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
@@ -16,7 +10,7 @@ var session = require('express-session');
 
 
 var monk = require('monk');
-var db = monk(dburl);
+var db = monk('localhost:27017/blogs');
 
 //var flash    = require('connect-flash');
 
@@ -32,9 +26,8 @@ var db = monk(dburl);
 
 function findByUsername(username, fn) {
   var collection = db.get('loginUsers');
-  console.log("Your UserName",username);
 collection.findOne({username:username},{},function(e,docs){
-  console.log("You are the user" ,docs);
+  console.log("now in user" ,docs);
     if(docs)
     {
       return fn(null,docs);
@@ -63,22 +56,6 @@ function findforBlogs(res){
 
 }
 
-function findBlog(res,ind){
-  var collect=db.get("blogs");
-  console.log("Index checking",ind);
-  collect.findOne({_id:ind},{},function(e,docs){
-    console.log("Blogs",docs);
-    if(docs)
-    {
-       sendData(res,docs);
-    }
-    else 
-    {
-      return null;
-    }
-  });
-
-}
 
 
 function findById(id, fn) {
@@ -192,23 +169,11 @@ app.get('/sent', ensureAuthenticated, function(req, res){
 });
 
 
-app.get('/blogs', function(req, res){
+app.get('/blogs', ensureAuthenticated, function(req, res){
   var obj=findforBlogs(res);
   console.log("checking object",obj);
 });
 
-app.get('/blogs/*', ensureAuthenticated, function(req, res){
-  console.log("quer id",req.params[0]);
-  var abc=req.params[0];
-
-  if(abc)
-  {
-    var obj=findBlog(res,req.params[0]);
-  }
-  else {
-  res.send({error:true})
-  }
-});
 
 // POST /login
 //   Use passport.authenticate() as route middleware to authenticate the
@@ -241,7 +206,6 @@ collection.findOne({email:mail},{},function(e,docs2){
     else 
     {
       var id=req.body.username;
-      
       collection.findOne({username:id},{},function(e,docs3){
         if(docs3)
         {
@@ -250,7 +214,7 @@ collection.findOne({email:mail},{},function(e,docs2){
         }
         else
         {
-            console.log("pushing in the database!!!");
+
             collection.insert(req.body, function (err, doc) {
         if (err) {
             // If it failed, return error
@@ -285,7 +249,7 @@ collection.findOne({email:mail},{},function(e,docs2){
 * Now close this file and go play with something else.
 */
 
-app.post('/newBlog',ensureAuthenticated, function(req,res){
+app.post('/newBlog',function(req,res){
 var collection = req.db.get("blogs");
         
       
@@ -299,7 +263,8 @@ var day = dateObj.getUTCDate();
 var year = dateObj.getUTCFullYear();
 
 var newdate = year + "/" + month + "/" + day;
-      var temp={'ptitle':title,'subtitle':subtitle,'author':author,'post':post,'date':newdate};
+     var temp={'ptitle':title,'subtitle':subtitle,'author':author,'post':post,'date':newdate};
+      index++;
       console.log(temp);
     collection.insert(temp, function (err, doc) {
         if (err) {
@@ -316,11 +281,11 @@ var newdate = year + "/" + month + "/" + day;
 app.get('/logout', function(req, res){
   req.logout();
 
-  res.redirect("/#/blog");
+  res.redirect("/#/login");
   
 });
 
-app.listen(port);
+app.listen(3001);
 
 
 // Simple route middleware to ensure user is authenticated.
@@ -328,9 +293,8 @@ app.listen(port);
 //   the request is authenticated (typically via a persistent login session),
 //   the request will proceed.  Otherwise, the user will be redirected to the
 //   login page.
-function ensureAuthenticated(req, res, next) 
-{
+function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
  return next(); }
-  res.redirect("/#/login");
+  res.redirect('/login');
 }

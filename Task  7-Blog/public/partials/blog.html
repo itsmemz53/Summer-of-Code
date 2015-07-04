@@ -1,0 +1,14 @@
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview"  ng-repeat="blog in blogs|orderBy:'index'">
+                    <a ng-href="/#/blog/{{blog._id}}">
+                        <h2 class="post-title">
+                           {{blog.ptitle}}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            {{blog.subtitle}}
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">{{blog.author}}</a> on {{blog.date}}</p>
+                </div>
+                <hr>
+                </div>
