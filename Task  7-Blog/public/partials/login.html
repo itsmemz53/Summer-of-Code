@@ -1,26 +1,19 @@
 
 
+<div class="jumbotron" style="margin-right:250px; margin-left:250px;border-style: solid;background-color:#1c2129" ng-app="myApp" ng-controller="loginUser"> <h1 style="text-align:center; color: #008080;margin-bottom:100px">Login Form </h1>
 
-<form  ng-app="myApp" ng-submit="login()"  ng-controller="loginUser"
-name="myForm" novalidate>
-<p style="float:right">
-Or <strong>or</strong><a ng-href="#/register"><strong>Register</strong> </a>
-</p>
-<p>Username:<br>
-  <input type="text" name="username" ng-model="username" required>
-  <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$invalid">
-  <span ng-show="myForm.username.$error.required">Username is required.</span>
-  </span>
-</p>
-<p>Password:<br>
-<input type="password" name="password" ng-model="password" required>
-<span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid"></span>
-<span ng-show="myForm.email.$error.required">password is required.</span>
-</p>
-<p>
-  <input type="submit" label="login"
-  ng-disabled="myForm.username.$invalid || myForm.password.$invalid">
-</p>
-
-
+		<div style="maring-left:250px">
+			<form role="form" ng-submit="login()" name="myForm" novalidate>
+  <div class="form-group" >
+    <label for="email"  style="maring-left:250px;color:#008080">User Name:</label>
+    <input type="text" class="form-control" id="email" name="username" style="width:180px; align:center ;maring-left:250px" placeHolder="Enter Username .." ng-model="username" required>
+  </div>
+  <div class="form-group">
+    <label for="pwd"style="maring-left:250px; color:#008080" >Password:</label>
+    <input type="password" class="form-control" name="password" id="pwd" style="width:180px;maring-left:250px;" placeHolder="Enter password .." ng-model="password" required>
+  </div>
+  <button type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-user"></span> <b>Submit</b></button>
+  <a ng-href="#/register"><p style="color:Orange;">Don't Have an Account ? </p></a>
 </form>
+		</div>
+		</div>

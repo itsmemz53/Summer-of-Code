@@ -32,9 +32,9 @@ var db = monk(dburl);
 
 function findByUsername(username, fn) {
   var collection = db.get('loginUsers');
-  console.log("Your UserName",username);
+  console.log("yeh user name hai latest!!",username);
 collection.findOne({username:username},{},function(e,docs){
-  console.log("You are the user" ,docs);
+  console.log("now in user" ,docs);
     if(docs)
     {
       return fn(null,docs);
@@ -65,7 +65,7 @@ function findforBlogs(res){
 
 function findBlog(res,ind){
   var collect=db.get("blogs");
-  console.log("Index checking",ind);
+  console.log("ind ko check kr rha !",ind);
   collect.findOne({_id:ind},{},function(e,docs){
     console.log("Blogs",docs);
     if(docs)
@@ -198,6 +198,7 @@ app.get('/blogs', function(req, res){
 });
 
 app.get('/blogs/*', ensureAuthenticated, function(req, res){
+  console.log("mubeen ki khaatir:D");
   console.log("quer id",req.params[0]);
   var abc=req.params[0];
 
