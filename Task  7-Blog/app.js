@@ -8,7 +8,7 @@ var port = process.env.PORT || 3030;
 var dburl = "localhost:27017/blogdb";
 
 if (process.env.PORT)
-  dburl = "itsmemz52:K13mohammad@ds053380.mongolab.com:53380/blogdb";
+  dburl = "admin:password@ds053380.mongolab.com:53380/blogdb";
 
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');

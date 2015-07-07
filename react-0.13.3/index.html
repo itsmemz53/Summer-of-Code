@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="build/react.js"></script>
+    <script src="build/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="mount-point"></div>
+    <script type="text/jsx">
+     
+      var Grid = React.createClass({
+        render: function(){
+          var srcs=this.props.sources;
+          console.log("Yeh Srcs hai",srcs)
+          var arr=[];
+          for (var i=0;i<srcs.length;i++)
+          {
+              arr.push(<img src={srcs[i]} style={{width:320 + "px",height:320+ "px"}}/>)
+          }
+          return ( <div> {arr} </div>)
+        }
+    });
+      var MyComponent3=React.createClass({
+        render:function(){
+
+        }
+
+      })
+    var MyComponent2 = React.createClass({
+        
+        render: function(){
+        return (
+              <div>                  
+                <input type="text" onChange={this.nameChange} />
+                <button id="btnEnter" onClick={this.ImageLoader}>Click Me </button>
+                <Grid sources={this.state.arr} />
+      
+                
+              </div>
+
+            )
+
+        },
+        componentDidMount:function(){
+            this.imageShower();
+        },
+        getInitialState: function(){
+          return {
+            arr : [],
+            name:""
+          }
+        },
+      nameChange: function(event){
+          this.setState({name:event.target.value});
+        },
+    imageShower:function()
+    {
+      var that=this;
+     
+                   $.get('http://datastore.asadmemon.com/kesa1',function(res){
+                        if(res.length){
+                          console.log(res)
+                         
+                           that.setState({arr : res})
+                        }
+                        
+                      });
+                  
+    },
+    ImageLoader :function() {
+     
+      var that=this;
+    
+      console.log("haan bhai",this.state.arr)
+      console.log("begherat !! ",this.state.name);
+        
+                var lastData = this.state.arr;
+                 lastData.push(this.state.name);
+              $.ajax({
+
+               
+
+          url: 'http://datastore.asadmemon.com/kesa1', 
+          type: 'POST', 
+          contentType: 'application/json', 
+          data: JSON.stringify(lastData),
+      success:function(res){console.log(res);
+        that.imageShower();
+      }
+        });
+        }
+            })
+  React.render(<MyComponent2 name="Handsome" />, document.getElementById('mount-point'));
+    </script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+  </body>
+</html>
