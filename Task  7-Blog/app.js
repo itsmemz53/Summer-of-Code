@@ -198,7 +198,7 @@ app.get('/blogs', function(req, res){
 });
 
 app.get('/blogs/*', ensureAuthenticated, function(req, res){
-  console.log("mubeen ki khaatir:D");
+
   console.log("quer id",req.params[0]);
   var abc=req.params[0];
 
@@ -229,7 +229,7 @@ app.get('/loginFailure', function(req, res){
   res.send({error:true})
 });
 
-app.post('/signup',function(req,res){
+app.post('/register',function(req,res){
 var collection = req.db.get("loginUsers");
 var mail=req.body.email;            
 collection.findOne({email:mail},{},function(e,docs2){
@@ -267,11 +267,7 @@ collection.findOne({email:mail},{},function(e,docs2){
     }
   });
 
-
     // Submit to the DB
-
-
-    
 
   });
 

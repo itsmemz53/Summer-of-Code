@@ -1,0 +1,23 @@
+
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <h1 class="title">Ionic Blank Starter</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+
+            <div ng-repeat="product in products">
+                <a class="item item-thumbnail-left" ng-href='/#/details/{{product._id}}'>
+                    <img src={{product.productImg}}>
+
+                    <h2>{{product.productName}}</h2>
+
+                    <p>{{product.productPrice}}</p>
+                </a>
+
+            </div>
+
+        </div>
+    </ion-content>
+
+</ion-pane>

@@ -1,0 +1,15 @@
+
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <h1 class="title">Product Detail</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div ng-repeat="product in products"></div>
+        <img src={{product.productImg}} >
+
+        <h2>{{product.productName}}</h2>
+
+        <p>{{product.productPrice}}</p>
+    </ion-content>
+
+</ion-pane>
